@@ -19,7 +19,7 @@ Agora, vamos lá:
 
 -------
 ### [Pera, mas o que é a Kanui?](id:OqueEhAKanui)
-A [Kanui](http://www.kanui.com.br), com menos de 3 anos de existência, já é um dos maiores e-commerces de artigos esportivos no Brasil. Nós somos uma venture do grupo [Rocket Internet](http://www.rocket-internet.de), um grupo alemão que é dono de empresas como a [Dafiti](http://www.dafiti.com.br), [Mobly](http://www.mobly.com.br), [Tricae](http://www.tricae.com.br), [EasyTaxi](http://www.easytaxi.com.br), [ZocPrint](http://www.zocprint.com.br), entre outras.
+A [Kanui](http://www.kanui.com.br), nascida no fim de 2011 já é um dos maiores e-commerces de artigos esportivos no Brasil. Nós somos uma venture do grupo [Rocket Internet](http://www.rocket-internet.de), um grupo alemão que é dono de empresas como a [Dafiti](http://www.dafiti.com.br), [EasyTaxi](http://www.easytaxi.com.br), [ClickBus](http://www.clickbus.com.br), [Mobly](http://www.mobly.com.br), [Tricae](http://www.tricae.com.br) entre outras.
 
 ### [Sobre as vagas](id:SobreAsVagas)
 Estamos sempre procurando por talentos para compor nossa equipe altamente profissional e dinâmica. As posições na nossa equipe de desenvolvimento, vão desde engenharia de software de backend (passando por desafios de escalabilidade e performance da aplicação até novas features e formas de pagamento), até a engenharia de frontend (passando por desafios em usabilidade, escalabilidade de CSS e alta performance de Javascript). 
@@ -30,14 +30,18 @@ Próximo a estação Villa Lobos - Jaguaré, em São Paulo, SP.
 
 
 ### [Como me candidato?](id:ComoMeCandidato)
-1. Forka esse projeto, escolha um dos testes aleatórios do [DojoPuzzle](http://dojopuzzles.com/) ou um dos nossos [testes](https://github.com/Kanui/QueroSerKanui/tree/master/testes), resolva-o com sua linguagem favorita e nos envie um e-mail para **vagas.dev@kanui.com.br** com o seu **fork** e o **link do problema** (link para o GitHub, BitBucket, tarball anexada, whatever). Junto do seu e-mail, adicione um link para seu curriculum, portfolio ou linkedin. Avaliaremos seu *fork* o quanto antes.<br />
-**Duração:** de 30m à 2h
+1. Crie um fork desse projeto
+	1. Escolha um dos testes do [DojoPuzzle](http://dojopuzzles.com/) ou da [Kanui](https://github.com/Kanui/QueroSerKanui/tree/master/testes);
+	2. Resolva-o com sua linguagem favorita e como se você estivesse resolvendo esse problema em um código de produção (live) (**Duração média:** de 30m à 2h);
+	3. Depois de resolvido, você tem duas opções:
+		1. Abrir um Pull Request informando seu e-mail/skype para contato ou;
+		2. Enviar um e-mail para **vagas.dev@kanui.com.br** com o **link do problema** (link para o GitHub, BitBucket, tarball/zip anexado).<br />
 
 2. Com hora marcada, um dos membros do nosso time entrará em contato com você por telefone ou Skype, para uma conversa descontraída sobre suas habilidades.<br />
-**Duração:** de 30m à 40m
+**Duração média:** de 30m à 40m
 
 3. Visita aqui no escritório, com uma sessão de pair-programming.<br />
-**Duração:** de 1h à 1h30m
+**Duração média:** de 1h à 1h30m
 
 \* Este processo pode ser alterado sem prévio aviso. Então, fique esperto com as atualizações deste README! :-)
 
