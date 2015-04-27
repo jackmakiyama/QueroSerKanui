@@ -1,0 +1,25 @@
+{
+    "name": "kanui/digital-display",
+    "description": "Kanui digital display test",
+    "authors": [
+        {
+            "name": "Jack Makiyama",
+            "email": "jack@phpbr.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kanui\\DigitalDisplay\\": [
+                "src",
+                "test"
+            ]
+        }
+    }
+}
