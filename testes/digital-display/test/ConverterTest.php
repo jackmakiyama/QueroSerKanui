@@ -2,17 +2,18 @@
 
 namespace Kanui\DigitalDisplay;
 
+use Kanui\DigitalDisplay\Assets\Numbers;
+
+/**
+ * @large
+ */
 class ConverterTest extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        $this->digitalInput = <<<'DIGITAL'
-    _  _     _  _  _  _  _
-  | _| _||_||_ |_   ||_||_|
-  ||_  _|  | _||_|  ||_| _|
-
-DIGITAL;
-        $this->gregorianOutput = 123456789;
+        $assetsNumbers = new Numbers;
+        $this->digitalInput = $assetsNumbers->getDigitalSequence();
+        $this->gregorianOutput = $assetsNumbers->getGregorianSequence();
     }
 
     /**
