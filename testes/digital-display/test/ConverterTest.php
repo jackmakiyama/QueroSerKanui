@@ -9,6 +9,18 @@ use Kanui\DigitalDisplay\Assets\Numbers;
  */
 class ConverterTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var string
+     */
+    protected $digitalInput;
+    /**
+     * @var int
+     */
+    protected $gregorianOutput;
+
+    /**
+     * {@inheritdoc}
+     */
     protected function setUp()
     {
         $assetsNumbers = new Numbers;
@@ -35,9 +47,9 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
      */
     public function instantiateWithArgumentsShouldWork()
     {
-        $parser = new Converter($this->digitalInput);
+        $converter = new Converter($this->digitalInput);
 
-        $this->assertAttributeEquals($this->digitalInput, 'digitalNumber', $parser);
+        $this->assertAttributeEquals($this->digitalInput, 'digitalNumber', $converter);
     }
 
     /**
@@ -47,8 +59,8 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
      */
     public function shouldConvertDigitalNumberToGregorianNumber()
     {
-        $parser = new Converter($this->digitalInput);
+        $converter = new Converter($this->digitalInput);
 
-        $this->assertEquals($this->gregorianOutput, $parser->converter());
+        $this->assertEquals($this->gregorianOutput, $converter->converter());
     }
 }
