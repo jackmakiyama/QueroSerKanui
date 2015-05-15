@@ -35,13 +35,13 @@ class Parser
         $digitalSequence = $this->splitDigitalNumbers
                                 ->splitSequence();
 
-        $gregorianSequence = null;
-        foreach ($digitalSequence as $value) {
-            try {
+        try {
+            $gregorianSequence = null;
+            foreach ($digitalSequence as $value) {
                 $gregorianSequence .= $numbers->getGregorianNumber($value);
-            } catch (Argument $e) {
-                return '/!\\erro de formato/!\\';
             }
+        } catch (Argument $e) {
+            return '/!\\erro de formato/!\\';
         }
 
         return $gregorianSequence;
