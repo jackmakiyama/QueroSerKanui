@@ -2,26 +2,48 @@
 
 namespace Kanui\DigitalDisplay;
 
+use \InvalidArgumentException as Argument;
+
 class Converter
 {
     /**
-     * @var string
+     * @var Split
      */
-    private $digitalNumber;
+    private $splitDigitalNumbers;
+    /**
+     * @var Numbers
+     */
+    private $numbers;
 
     /**
-     * @param string $digitalNumber
+     * @param string $splitDigitalNumbers
      */
-    public function __construct($digitalNumber)
-    {
-        $this->digitalNumber = $digitalNumber;
+    public function __construct(
+        Split $splitDigitalNumbers,
+        Numbers $numbers = null
+    ) {
+        $this->splitDigitalNumbers = $splitDigitalNumbers;
+        $this->numbers = $numbers ?: new Numbers;
     }
 
     /**
      * @return int
      */
-    public function converter()
+    public function convertToGregorian()
     {
-        return 123456789;
+        $numbers = $this->numbers;
+        $digitalSequence = $this->splitDigitalNumbers
+                                ->splitSequence();
+
+        $gregorianSequence = null;
+        foreach ($digitalSequence as $value) {
+            try {
+                $gregorianSequence .= $numbers->getGregorianNumber($value);
+            } catch (Argument $e) {
+                return '/!\\erro de formato/!\\';
+            }
+        }
+
+        return $gregorianSequence;
     }
 }

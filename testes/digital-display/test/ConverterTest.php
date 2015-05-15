@@ -17,6 +17,10 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
      * @var int
      */
     protected $gregorianOutput;
+    /**
+     * @var Numbers
+     */
+    protected $numbers;
 
     /**
      * {@inheritdoc}
@@ -24,8 +28,11 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $assetsNumbers = new Numbers;
-        $this->digitalInput = $assetsNumbers->getDigitalSequence();
+        $split = new Split($assetsNumbers->getDigitalSequence());
+        $this->digitalInput = $split;
+        $this->incorrectDigitalInput = new Split($assetsNumbers->getDigitalIncorrectSequence());
         $this->gregorianOutput = $assetsNumbers->getGregorianSequence();
+        $this->numbers = new Numbers;
     }
 
     /**
@@ -49,18 +56,30 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
     {
         $converter = new Converter($this->digitalInput);
 
-        $this->assertAttributeEquals($this->digitalInput, 'digitalNumber', $converter);
+        $this->assertAttributeEquals($this->digitalInput, 'splitDigitalNumbers', $converter);
     }
 
     /**
      * @test
      *
-     * @covers Kanui\DigitalDisplay\Converter::converter
+     * @covers Kanui\DigitalDisplay\Converter::convertToGregorian
      */
     public function shouldConvertDigitalNumberToGregorianNumber()
     {
         $converter = new Converter($this->digitalInput);
 
-        $this->assertEquals($this->gregorianOutput, $converter->converter());
+        $this->assertEquals($this->gregorianOutput, $converter->convertToGregorian());
+    }
+
+    /**
+     * @test
+     *
+     * @covers Kanui\DigitalDisplay\Converter::convertToGregorian
+     */
+    public function shouldReturnAStringWithAErrorMessageWhenTryConvertAIncorrectDigitalNumber()
+    {
+        $converter = new Converter($this->incorrectDigitalInput);
+
+        $this->assertEquals('/!\\erro de formato/!\\', $converter->convertToGregorian());
     }
 }

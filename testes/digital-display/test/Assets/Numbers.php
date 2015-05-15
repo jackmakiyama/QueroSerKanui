@@ -16,64 +16,73 @@ DIGITAL;
     /**
      * @var string
      */
+    private $digitalIncorrectSequence = <<<'DIGITAL'
+    _  _     _  _  _  _  _ 
+  | _| _||_||_ |_   ||_|| |
+  ||_  _|  | _||_|  ||_| _|
+
+DIGITAL;
+    /**
+     * @var array
+     */
     private $slicedDigitalSequence = [
-        <<<'ONE'
+        1 => <<<'ONE'
    
   |
   |
 
 ONE
         ,
-        <<<'TWO'
+        2 => <<<'TWO'
  _ 
  _|
 |_ 
 
 TWO
         ,
-        <<<'THREE'
+        3 => <<<'THREE'
  _ 
  _|
  _|
 
 THREE
         ,
-        <<<'FOUR'
+        4 => <<<'FOUR'
    
 |_|
   |
 
 FOUR
         ,
-        <<<'FIVE'
+        5 => <<<'FIVE'
  _ 
 |_ 
  _|
 
 FIVE
         ,
-        <<<'SIX'
+        6 => <<<'SIX'
  _ 
 |_ 
 |_|
 
 SIX
         ,
-        <<<'SEVEN'
+        7 => <<<'SEVEN'
  _ 
   |
   |
 
 SEVEN
         ,
-        <<<'EIGHT'
+        8 => <<<'EIGHT'
  _ 
 |_|
 |_|
 
 EIGHT
         ,
-        <<<'NINE'
+        9 => <<<'NINE'
  _ 
 |_|
  _|
@@ -91,6 +100,14 @@ NINE
     public function getDigitalSequence()
     {
         return $this->digitalSequence;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDigitalIncorrectSequence()
+    {
+        return $this->digitalIncorrectSequence;
     }
 
     /**

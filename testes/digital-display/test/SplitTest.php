@@ -5,7 +5,7 @@ namespace Kanui\DigitalDisplay;
 use Kanui\DigitalDisplay\Assets\Numbers;
 
 /**
- * @medium
+ * @small
  */
 class SplitTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,6 +13,10 @@ class SplitTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     protected $digitalInput;
+    /**
+     * @var array
+     */
+    protected $slicedDigitalOutput;
 
     /**
      * {@inheritdoc}
@@ -66,7 +70,7 @@ class SplitTest extends \PHPUnit_Framework_TestCase
         $slicedSequence = $split->splitSequence();
 
         $this->assertEquals(
-            $this->slicedDigitalOutput,
+            array_values($this->slicedDigitalOutput),
             $slicedSequence
         );
     }
