@@ -1,53 +1,24 @@
-Digital Display
-======
-Este é um parser. Você deve escrever um programa que leia um arquivo cujo formato simula um leitor digital, por exemplo:
+# Digital Display
 
-<pre>
-    _  _     _  _  _  _  _
-  | _| _||_||_ |_   ||_||_|
-  ||_  _|  | _||_|  ||_| _|
+## Modo de usar
 
-</pre>
+```php
+<?php
 
-Seu programa deverá parsear este tipo de entrada e gerar a saída como números, seguindo o exemplo:
+use Kanui\DigitalDisplay\Parser;
+use Kanui\DigitalDisplay\Split;
 
-	123456789
-
-Toda seqüência numérica terá 3 linhas, seguida por uma quarta linha em branco. A largura de cada dígito do formato é 3, sempre composta por **pipes**, **underlines** e **espaços** ('|', '_' e ' ', respectivamente); todo grupo de 3 primeiras linhas terá 9 dígitos, correspondendo a 27 caracteres. Porém é **importante** que seu programa esteja preparado para uma entrada como:
-
-<pre>
-    _  _     _  _  _  _  _
-  | _| _ |_||_ |_   ||_||_|
-  ||_  _|  | _ |_|  ||_  _|
-
-</pre>
-
-Este caso deve retornar uma linha com a *string* "/!\erro de formato/!\".
-
-Neste repositório existe um arquivo **data.txt** que você pode usar em seu teste.
-
-**Exemplo de entrada/data.txt**:
-<pre>
+$digitalNumber = <<<'DIGITAL'
     _  _     _  _  _  _  _ 
   | _| _||_||_ |_   ||_||_|
   ||_  _|  | _||_|  ||_| _|
 
- _  _     _     _  _  _  _ 
-|_  _|  ||_||_| _||_   ||_|
-|_||_   | _|  | _| _|  ||_|
+DIGITAL;
 
-    _  _     _  _  _  _  _
-  | _| _ |_||_ |_   ||_||_|
-  ||_  _|  | _ |_|  ||_  _|
+$splitSequence = new Split($digitalNumber);
+$parser = new Parser($splitSequence);
 
- _  _  _  _  _  _  _  _  _ 
-| || || || || || ||_ |_ |_ 
-|_||_||_||_||_||_||_||_||_|
-</pre>
+echo $parser->getGregorianNumbers();
+// return: 123456789
+```
 
-**Exemplo de saída**:
-	
-	123456789
-	621943578
-	/!\erro de formato/!\
-	000000666
