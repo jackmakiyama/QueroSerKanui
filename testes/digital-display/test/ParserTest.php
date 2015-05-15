@@ -7,7 +7,7 @@ use Kanui\DigitalDisplay\Assets\Numbers;
 /**
  * @large
  */
-class ConverterTest extends \PHPUnit_Framework_TestCase
+class ParserTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var string
@@ -38,48 +38,48 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      *
-     * @covers Kanui\DigitalDisplay\Converter::__construct
+     * @covers Kanui\DigitalDisplay\Parser::__construct
      *
      * @expectedException PHPUnit_Framework_Error
      */
     public function instantiateWithoutArgumentsShouldThrownAPhpError()
     {
-        return new Converter;
+        return new Parser;
     }
 
     /**
      * @test
      *
-     * @covers Kanui\DigitalDisplay\Converter::__construct
+     * @covers Kanui\DigitalDisplay\Parser::__construct
      */
     public function instantiateWithArgumentsShouldWork()
     {
-        $converter = new Converter($this->digitalInput);
+        $parser = new Parser($this->digitalInput);
 
-        $this->assertAttributeEquals($this->digitalInput, 'splitDigitalNumbers', $converter);
+        $this->assertAttributeEquals($this->digitalInput, 'splitDigitalNumbers', $parser);
     }
 
     /**
      * @test
      *
-     * @covers Kanui\DigitalDisplay\Converter::convertToGregorian
+     * @covers Kanui\DigitalDisplay\Parser::getGregorianNumbers
      */
     public function shouldConvertDigitalNumberToGregorianNumber()
     {
-        $converter = new Converter($this->digitalInput);
+        $parser = new Parser($this->digitalInput);
 
-        $this->assertEquals($this->gregorianOutput, $converter->convertToGregorian());
+        $this->assertEquals($this->gregorianOutput, $parser->getGregorianNumbers());
     }
 
     /**
      * @test
      *
-     * @covers Kanui\DigitalDisplay\Converter::convertToGregorian
+     * @covers Kanui\DigitalDisplay\Parser::getGregorianNumbers
      */
     public function shouldReturnAStringWithAErrorMessageWhenTryConvertAIncorrectDigitalNumber()
     {
-        $converter = new Converter($this->incorrectDigitalInput);
+        $parser = new Parser($this->incorrectDigitalInput);
 
-        $this->assertEquals('/!\\erro de formato/!\\', $converter->convertToGregorian());
+        $this->assertEquals('/!\\erro de formato/!\\', $parser->getGregorianNumbers());
     }
 }

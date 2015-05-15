@@ -4,7 +4,7 @@ namespace Kanui\DigitalDisplay;
 
 use \InvalidArgumentException as Argument;
 
-class Converter
+class Parser
 {
     /**
      * @var Split
@@ -29,7 +29,7 @@ class Converter
     /**
      * @return int
      */
-    public function convertToGregorian()
+    public function getGregorianNumbers()
     {
         $numbers = $this->numbers;
         $digitalSequence = $this->splitDigitalNumbers
