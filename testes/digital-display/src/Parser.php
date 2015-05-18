@@ -2,7 +2,7 @@
 
 namespace Kanui\DigitalDisplay;
 
-use \InvalidArgumentException as Argument;
+use \InvalidArgumentException;
 
 class Parser
 {
@@ -40,7 +40,7 @@ class Parser
             foreach ($digitalSequence as $value) {
                 $gregorianSequence .= $numbers->getGregorianNumber($value);
             }
-        } catch (Argument $e) {
+        } catch (InvalidArgumentException $e) {
             return '/!\\erro de formato/!\\';
         }
 

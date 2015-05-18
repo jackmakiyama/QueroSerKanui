@@ -2,7 +2,7 @@
 
 namespace Kanui\DigitalDisplay;
 
-use \InvalidArgumentException as Argument;
+use \InvalidArgumentException;
 
 class Numbers
 {
@@ -91,7 +91,7 @@ ZERO
         $gregorians = array_flip(self::$numbers);
 
         if (! isset($gregorians[$digitalNumber])) {
-            throw new Argument('Invalid digital number');
+            throw new InvalidArgumentException('Invalid digital number');
         }
 
         return $gregorians[$digitalNumber];
